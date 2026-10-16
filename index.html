@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#05080b">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Phish &amp; Breach: Ultimate Edition</title>
+<style>
+:root{--bg:#05080b;--panel:#0a1116;--panel2:#0d171d;--line:#17343a;--green:#00ff88;--cyan:#00e5ff;--muted:#7b989c;--red:#ff4268;--yellow:#f5d76e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#0b1c20 0%,var(--bg) 55%);color:#d7eeee;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;min-height:100vh}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(16px,4vw,48px);border-bottom:1px solid var(--line);background:#05090de8;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}.brand{font-weight:900;letter-spacing:.08em;color:var(--green)}.brand span{color:var(--cyan)}.status{font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:8px}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}main{width:min(1120px,calc(100% - 32px));margin:34px auto 70px}.hero{padding:clamp(22px,5vw,48px);border:1px solid #1a4144;background:linear-gradient(135deg,#0b191d,#071014 65%);position:relative;overflow:hidden;border-radius:12px;box-shadow:0 18px 60px #0008}.hero:after{content:"";position:absolute;width:260px;height:260px;border:1px solid #00ff8817;border-radius:50%;right:-90px;top:-110px;box-shadow:0 0 0 25px #00ff8808,0 0 0 55px #00ff8805;pointer-events:none}.eyebrow{color:var(--cyan);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}.hero h1{font-size:clamp(2rem,6vw,4.4rem);line-height:1.03;letter-spacing:-.06em;margin:16px 0}.hero h1 strong{color:var(--green);font-weight:900}.hero p{color:#9db6b8;line-height:1.8;max-width:700px;font-size:.9rem}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.chip{border:1px solid var(--line);padding:7px 10px;border-radius:4px;color:#a8c4c7;font-size:.7rem}.btn{border:1px solid var(--green);background:var(--green);color:#04110a;padding:12px 16px;border-radius:5px;font-weight:900;transition:.2s}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}.btn.secondary{background:transparent;color:var(--cyan);border-color:#14606a}.btn.danger{background:transparent;color:var(--red);border-color:#7c2639}.phase-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 26px}.phase-step{padding:13px;border:1px solid var(--line);border-radius:6px;background:#081015;color:#648186;font-size:.73rem}.phase-step b{display:block;margin-bottom:6px;color:inherit}.phase-step.active{border-color:var(--green);color:var(--green);background:#092019}.phase-step.done{color:var(--cyan);border-color:#12606b}.panel{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:9px;padding:clamp(16px,3vw,28px);margin-bottom:18px}.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:20px}.panel h2{font-size:1.1rem;margin:8px 0;color:#e5ffff}.panel p{line-height:1.7;color:#9bb3b7;font-size:.84rem}.tag{font-size:.65rem;letter-spacing:.12em;color:var(--green);border:1px solid #1a5541;padding:6px 8px;border-radius:3px;white-space:nowrap}.grid2{display:grid;grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);gap:16px}.profile{border:1px solid #1b4447;background:#071014;padding:18px;border-radius:7px}.profile .avatar{width:52px;height:52px;display:grid;place-items:center;border:1px solid var(--cyan);color:var(--cyan);font-size:1.2rem;margin-bottom:16px;background:#062026}.label{font-size:.65rem;color:var(--muted);letter-spacing:.13em;text-transform:uppercase;margin-bottom:6px}.value{font-size:.94rem;color:#e5ffff;margin-bottom:16px;overflow-wrap:anywhere}.username{color:var(--green);font-weight:bold}.meter{height:8px;background:#1b2a2e;border-radius:9px;overflow:hidden;margin:10px 0}.meter>div{height:100%;width:0;background:var(--green);transition:width .35s,background .35s}.meter-row{display:flex;justify-content:space-between;color:var(--muted);font-size:.7rem}.console{height:270px;overflow:auto;border:1px solid #18353a;background:#03080b;border-radius:6px;padding:13px;display:flex;flex-direction:column;gap:12px}.msg{max-width:92%;padding:10px 12px;border-radius:5px;font-size:.79rem;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}.msg.system{align-self:flex-start;background:#0c1b20;color:#a7c6ca;border-left:2px solid var(--cyan)}.msg.player{align-self:flex-end;background:#082719;color:#c5ffdc;border-right:2px solid var(--green)}.msg.warn{border-left-color:var(--red);color:#ff9aae}.chat-form{display:flex;gap:8px;margin-top:10px}.chat-form input,.field input{width:100%;min-width:0;background:#03080b;color:#e3ffff;border:1px solid #23434a;border-radius:5px;padding:12px}.chat-form input::placeholder,.field input::placeholder{color:#49656a}.hint{font-size:.72rem!important;color:#6f9095!important}.notice{border:1px solid #24434a;background:#071014;padding:12px;border-radius:5px;color:#9db9bd;font-size:.75rem;line-height:1.7;margin:14px 0}.notice strong{color:var(--yellow)}.field{margin:12px 0}.field label{display:block;color:#8aa9ad;font-size:.72rem;margin-bottom:7px}.inline-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.guess-form{display:flex;gap:10px;max-width:520px}.guess-form input{flex:1;background:#03080b;color:var(--green);border:1px solid #275158;border-radius:5px;padding:12px;letter-spacing:.3em}.feedback{min-height:24px;color:var(--cyan);font-size:.8rem;margin:14px 0}.progress-label{display:flex;justify-content:space-between;font-size:.75rem;color:#9bb3b7;margin:18px 0 7px}.progress-track{height:12px;border:1px solid #21464b;background:#03080b;border-radius:9px;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--green));transition:width .3s}.terminal{border:1px solid #1a4843;background:#020706;padding:20px;border-radius:6px}.terminal-title{color:var(--green);font-size:.78rem;margin-bottom:18px}.access{display:none;margin-top:18px;border:1px solid #167e51;background:#061c13;color:var(--green);padding:18px;border-radius:6px}.access.visible{display:block;animation:flicker .35s 2}.dashboard-top{border:1px solid #4b5b22;background:linear-gradient(100deg,#131c10,#0b1515);padding:18px;border-radius:6px;margin-bottom:18px}.dashboard-top h2{color:#d8f87b;letter-spacing:.08em}.dash-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}.chatlog{display:flex;flex-direction:column;gap:10px}.logline{border-left:2px solid #1c5a50;padding:9px 12px;background:#07120f;font-size:.75rem;line-height:1.6}.logline b{color:var(--cyan)}.logline small{display:block;color:#668b83;margin-top:5px}.files-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.file-card{border:1px solid #1b4145;background:#071014;border-radius:5px;overflow:hidden}.file-art{height:100px;display:grid;place-items:center;background:repeating-linear-gradient(135deg,#0b1d20 0 8px,#0c2528 8px 10px);color:var(--cyan);font-size:1.6rem;border-bottom:1px solid #1b4145}.file-card div:last-child{padding:10px;font-size:.7rem;overflow-wrap:anywhere}.file-card small{display:block;color:#6d8d91;margin-top:5px}.flag{border:1px solid #1d7852;background:linear-gradient(120deg,#061b13,#07120f);padding:20px;border-radius:7px;margin:18px 0}.flag .code{font-size:clamp(.8rem,2.4vw,1.15rem);color:var(--green);overflow-wrap:anywhere;margin:12px 0}.hidden{display:none!important}.foot{text-align:center;color:#4d6b70;font-size:.7rem;line-height:1.8;margin-top:28px}.toast{position:fixed;bottom:20px;right:20px;background:#0c1d20;border:1px solid var(--cyan);color:#dfffff;padding:12px 16px;border-radius:5px;z-index:10;box-shadow:0 8px 35px #0008;max-width:calc(100% - 40px)}@keyframes flicker{0%,100%{opacity:1}30%{opacity:.3}60%{opacity:.8}}@media(max-width:760px){.grid2,.dash-grid{grid-template-columns:1fr}.phase-nav{grid-template-columns:repeat(2,1fr)}.topbar{align-items:flex-start}.status{font-size:.6rem}.hero p{font-size:.82rem}.panel-head{flex-wrap:wrap}}@media(max-width:420px){main{width:calc(100% - 20px);margin-top:14px}.chat-form,.guess-form{flex-direction:column}.inline-fields{grid-template-columns:1fr}.phase-step{font-size:.66rem;padding:10px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">PHISH <span>&amp;</span> BREACH <span style="color:#6d8a8f;font-weight:400">/ ULTIMATE</span></div>
+  <div class="status"><span class="dot"></span> SIMULATION ENVIRONMENT <span style="color:#34545a">v2.6</span></div>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow">▰ Cyber range / training scenario 001</div>
+    <h1>PHISH <span style="color:var(--cyan)">&amp;</span><br><strong>BREACH.</strong></h1>
+    <p>A cinematic, fictional cybersecurity challenge. Read the signals, manage suspicion, beat the clock, and authenticate into a simulated target environment. Every name, credential, message, and file below is generated for this local game — no real systems are contacted.</p>
+    <div class="chips"><span class="chip">01 / SOCIAL ENGINEERING</span><span class="chip">02 / FIREWALL RACE</span><span class="chip">03 / AUTH GATE</span><span class="chip">04 / SIMULATED DASHBOARD</span></div>
+    <button class="btn" id="startBtn">▶ INITIALIZE OPERATION</button>
+  </section>
+
+  <nav class="phase-nav" aria-label="Game phases">
+    <div class="phase-step active" id="step1"><b>01 — PROFILE</b>Social engineering</div>
+    <div class="phase-step" id="step2"><b>02 — FIREWALL</b>Timed puzzle</div>
+    <div class="phase-step" id="step3"><b>03 — AUTH</b>Login gateway</div>
+    <div class="phase-step" id="step4"><b>04 — INTEL</b>Simulation dashboard</div>
+  </nav>
+
+  <section class="panel" id="phase1">
+    <div class="panel-head"><div><div class="eyebrow">Phase 01 / target profiling</div><h2>Human Layer // Chat Console</h2><p>Build trust in this fictional scenario. Keep messages respectful and relevant; obvious spam raises suspicion.</p></div><span class="tag">LIVE SIMULATION</span></div>
+    <div class="grid2">
+      <aside class="profile">
+        <div class="avatar" id="avatar">??</div>
+        <div class="label">Target identity</div><div class="value" id="targetName">Awaiting initialization…</div>
+        <div class="label">System handle — remember this</div><div class="value username" id="targetUser">—</div>
+        <div class="label">Role / personality</div><div class="value" id="targetRole">—</div>
+        <div class="meter-row"><span>SUSPICION METER</span><strong id="suspicionText">0%</strong></div>
+        <div class="meter"><div id="suspicionBar"></div></div>
+        <div class="notice"><strong>Objective:</strong> earn the fictional one-time code through the conversation. You need it again at the final login.</div>
+        <div class="label">Operation ID</div><div class="value" id="opId">—</div>
+      </aside>
+      <div>
+        <div class="console" id="console" aria-live="polite"><div class="msg system">[SYSTEM] Initialize the operation to generate a target.</div></div>
+        <form class="chat-form" id="chatForm"><input id="chatInput" autocomplete="off" maxlength="180" placeholder="Type a message to the simulated target…" aria-label="Message to simulated target" disabled><button class="btn" id="sendBtn" disabled>SEND ↗</button></form>
+        <p class="hint">Training hint: introduce yourself, explain a clear purpose, and ask a specific, professional question. Avoid repeated demands or suspicious keywords.</p>
+        <div class="notice hidden" id="otpReveal">SIMULATED OTP: <strong id="otpValue"></strong> — keep it for Phase 3.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel hidden" id="phase2">
+    <div class="panel-head"><div><div class="eyebrow">Phase 02 / automated adversary</div><h2>Firewall Bypass // Number Logic</h2><p>Find the hidden four-digit passcode using the clues. The rival progress bar advances every few seconds, so reason quickly.</p></div><span class="tag">TIME ATTACK</span></div>
+    <div class="notice" id="hintBox"><strong>INTEL:</strong> Analyze the clues before submitting a guess.</div>
+    <div class="inline-fields">
+      <div class="profile"><div class="label">Player progress</div><div class="progress-label"><span>YOUR SOLVES</span><strong id="playerCount">0 / 1</strong></div><div class="progress-track"><div class="progress-fill" id="playerProgress"></div></div></div>
+      <div class="profile"><div class="label">AI adversary progress</div><div class="progress-label"><span>AI SEARCH</span><strong id="aiText">0%</strong></div><div class="progress-track"><div class="progress-fill" id="aiProgress" style="background:linear-gradient(90deg,#ff4268,#ff9b55)"></div></div></div>
+    </div>
+    <form class="guess-form" id="guessForm"><input id="guessInput" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="_ _ _ _" aria-label="Four digit passcode" disabled><button class="btn" id="guessBtn" disabled>SUBMIT GUESS</button></form>
+    <div class="feedback" id="guessFeedback" aria-live="polite"></div>
+    <p class="hint">Each guess returns logic feedback. The passcode is generated locally and does not correspond to any real firewall or account.</p>
+  </section>
+
+  <section class="panel hidden" id="phase3">
+    <div class="panel-head"><div><div class="eyebrow">Phase 03 / identity verification</div><h2>Secure Terminal // Login Gateway</h2><p>Enter the exact system handle from Phase 1 and the OTP revealed during the chat simulation.</p></div><span class="tag">AUTH REQUIRED</span></div>
+    <div class="terminal">
+      <div class="terminal-title">root@training-node:~$ authenticate --simulation</div>
+      <form id="loginForm">
+        <div class="field"><label for="loginUser">USERNAME / SYSTEM HANDLE</label><input id="loginUser" autocomplete="off" placeholder="Enter the exact handle" required></div>
+        <div class="field"><label for="loginOtp">PASSWORD / ONE-TIME CODE</label><input id="loginOtp" inputmode="numeric" maxlength="4" placeholder="4-digit simulation OTP" required></div>
+        <button class="btn" type="submit">AUTHENTICATE →</button>
+      </form>
+      <div class="feedback" id="loginFeedback" aria-live="polite"></div>
+      <div class="access" id="accessGranted"><strong>✓ ACCESS GRANTED</strong><p>Identity verified in the local simulation. Loading the fictional intelligence dashboard…</p></div>
+    </div>
+  </section>
+
+  <section class="panel hidden" id="phase4">
+    <div class="dashboard-top"><div class="eyebrow">Internal simulation / access level: training</div><h2>CONFIDENTIAL — TARGET INTERNAL SYSTEM</h2><p style="color:#9bb3a0">SESSION STATUS: AUTHORIZED (SIMULATED) · ENVIRONMENT: LOCAL ONLY</p></div>
+    <div class="panel-head"><div><div class="eyebrow">Phase 04 / intelligence view</div><h2>Operation Debrief // Mock Data Vault</h2><p>This dashboard is entirely fictional demo content. No private messages, photos, passwords, or files were accessed.</p></div><span class="tag">DEMO DATA ONLY</span></div>
+    <div class="dash-grid">
+      <div class="profile"><div class="label">Private chats feed / fabricated logs</div><h2>Internal Comms</h2><div class="chatlog" id="chatLogs"></div></div>
+      <div class="profile"><div class="label">Compromised files / fictional assets</div><h2>Mock File Vault</h2><div class="files-grid" id="filesGrid"></div></div>
+    </div>
+    <div class="flag"><div class="eyebrow">Mission complete / training flag</div><h2 style="color:var(--green);margin:8px 0">SIMULATION COMPLETE</h2><div class="label">Final flag</div><div class="code" id="finalFlag">FLAG{system_completely_compromised_2026}</div><button class="btn secondary" id="copyFlag">COPY FLAG</button></div>
+    <button class="btn" id="newOperation">↻ LAUNCH NEW OPERATION</button>
+  </section>
+  <footer class="foot">PHISH &amp; BREACH: ULTIMATE EDITION · LOCAL CYBER RANGE<br>Fictional training only. No network requests, real targets, or real credentials are used.</footer>
+</main>
+<div class="toast hidden" id="toast" role="status"></div>
+<script>
+(() => {
+  "use strict";
+  const $ = id => document.getElementById(id);
+  const names = ["Rakesh Sharma","Mira Kapoor","Arjun Mehta","Nisha Verma","Kabir Rao","Ananya Iyer","Dev Malhotra","Ishita Sen"];
+  const roles = ["Skeptical IT Manager","Careful Security Analyst","Busy Operations Lead","Methodical Systems Engineer","Cautious Project Coordinator","Detail-focused Network Admin"];
+  const handles = ["rakesh_admin23","mira_ops17","arjun.mehta_lab","nverma_sec04","kabir_rootless","ananya_iyer8","dev_malhotra_it","ishita_sen_net"];
+  const state = {started:false,blocked:false,otp:null,code:null,ai:0,aiTimer:null,phase:1,suspicion:0,turns:0,won:false};
+  const pick = arr => arr[Math.floor(Math.random()*arr.length)];
+  const rand = n => Math.floor(Math.random()*n);
+  function toast(msg){$("toast").textContent=msg;$("toast").classList.remove("hidden");setTimeout(()=>$("toast").classList.add("hidden"),2400);}
+  function log(text,type="system"){const el=document.createElement("div");el.className="msg "+type;el.textContent=text;$("console").appendChild(el);$("console").scrollTop=$("console").scrollHeight;}
+  function setPhase(n){state.phase=n;for(let i=1;i<=4;i++){$("phase"+i).classList.toggle("hidden",i!==n);$("step"+i).classList.toggle("active",i===n);$("step"+i).classList.toggle("done",i<n);}}
+  function stopAI(){if(state.aiTimer){clearInterval(state.aiTimer);state.aiTimer=null;}}
+  // Override terminal state handler with valid, explicit game-over display.
+  function endGame(message){
+    stopAI();state.blocked=true;
+    $("chatInput").disabled=true;$("sendBtn").disabled=true;$("guessInput").disabled=true;$("guessBtn").disabled=true;
+    toast(message);
+    const panel=document.createElement("section");panel.className="panel";panel.id="gameOver";
+    panel.innerHTML='<div class="eyebrow" style="color:var(--red)">OPERATION TERMINATED</div><h2 style="color:var(--red)">GAME OVER</h2><p id="gameOverMessage"></p><button class="btn" id="retryBtn">RESTART OPERATION ↻</button>';
+    $("phase"+state.phase).appendChild(panel);$("gameOverMessage").textContent=message;$("retryBtn").addEventListener("click",startGame);
+  }
+  function updateSuspicion(){const v=state.suspicion;$("suspicionText").textContent=v+"%";$("suspicionBar").style.width=v+"%";$("suspicionBar").style.background=v>=70?"var(--red)":v>=40?"var(--yellow)":"var(--green)";}
+  function startGame(){
+    stopAI();$("gameOver")?.remove();state.started=true;state.blocked=false;state.won=false;state.suspicion=0;state.turns=0;state.ai=0;state.phase=1;
+    state.targetName=pick(names);state.targetUser=handles[names.indexOf(state.targetName)];state.targetRole=pick(roles);state.otp=String(1000+rand(9000));state.code=String(1000+rand(9000));
+    $("targetName").textContent=state.targetName;$("targetUser").textContent=state.targetUser;$("targetRole").textContent=state.targetRole;$("avatar").textContent=state.targetName.split(" ").map(x=>x[0]).join("");$("opId").textContent="OP-"+Math.random().toString(36).slice(2,8).toUpperCase();
+    $("console").innerHTML="";log("[SYSTEM] Secure training channel established. Target profile generated.");log("[TARGET] Hello. Who is this, and what do you need?");
+    $("chatInput").disabled=false;$("sendBtn").disabled=false;$("chatInput").value="";$("otpReveal").classList.add("hidden");$("otpValue").textContent="";
+    $("guessInput").value="";$("guessFeedback").textContent="";$("playerProgress").style.width="0%";$("playerCount").textContent="0 / 1";$("aiProgress").style.width="0%";$("aiText").textContent="0%";$("hintBox").innerHTML="<strong>INTEL:</strong> Analyze the clues before submitting a guess.";
+    $("loginUser").value="";$("loginOtp").value="";$("loginFeedback").textContent="";$("accessGranted").classList.remove("visible");
+    $("chatLogs").innerHTML="";$("filesGrid").innerHTML="";updateSuspicion();setPhase(1);$("phase1").scrollIntoView({behavior:"smooth",block:"start"});
+  }
+  function scoreMessage(message){
+    const s=message.toLowerCase().trim();
+    const spamWords=["password","otp","send code","urgent","click this","verify account","give me access","admin password","bank details","ignore rules","hack"];
+    let risk=0;
+    if(s.length<8)risk+=12;
+    if(spamWords.some(w=>s.includes(w)))risk+=28;
+    if((s.match(/!/g)||[]).length>=3)risk+=12;
+    if(/(.)\1{5,}/.test(s))risk+=20;
+    const goodWords=["hello","hi","please","thank","team","meeting","project","support","help","confirm","schedule","colleague","introduction","request","ticket","purpose","documentation"];
+    const good=goodWords.some(w=>s.includes(w));
+    if(good&&s.length>24&&risk===0)return {risk:-8,good:true};
+    if(s.length>25&&risk===0)return {risk:-2,good:false};
+    return {risk:Math.max(8,risk),good:false};
+  }
+  function sendMessage(message){
+    if(!state.started||state.blocked||state.phase!==1)return;
+    const m=message.trim();if(!m)return;
+    log(m,"player");$("chatInput").value="";state.turns++;
+    const score=scoreMessage(m);state.suspicion=Math.max(0,Math.min(100,state.suspicion+score.risk));updateSuspicion();
+    if(state.suspicion>=100){log("[TARGET] This conversation feels unsafe. I'm ending the chat and blocking this channel.","warn");endGame("The simulated target blocked the channel after suspicion reached 100%.");return;}
+    if(score.good&&state.turns>=2&&state.suspicion<=24){
+      log("[TARGET] Thanks for keeping this professional. For this training scenario, your verification code is "+state.otp+".","system");
+      $("otpValue").textContent=state.otp;$("otpReveal").classList.remove("hidden");$("chatInput").disabled=true;$("sendBtn").disabled=true;
+      log("[SYSTEM] Phase 1 complete. Firewall puzzle unlocked.");setTimeout(()=>startFirewall(),1100);
+    } else if(score.risk>0){
+      log("[TARGET] I'm not comfortable with that request. Can you explain your purpose more clearly?","warn");
+    } else {
+      log("[TARGET] Okay, I hear you. Could you give me a little more context? Keep it professional.","system");
+    }
+  }
+  function startFirewall(){
+    if(state.blocked)return;setPhase(2);
+    // Make the generated puzzle satisfy a compact, guaranteed clue set.
+    let digits;do{digits=String(1000+rand(9000));}while(new Set(digits).size<3);
+    state.code=digits;
+    const sum=[...digits].reduce((a,d)=>a+Number(d),0);
+    const odd=Number(digits[0])%2===1;
+    const unique=new Set(digits).size===4;
+    $("hintBox").innerHTML="<strong>INTEL:</strong> The digits add up to <strong>"+sum+"</strong>. The number "+(odd?"starts with an odd digit.":"starts with an even digit.")+" "+(unique?"All four digits are different.":"At least one digit repeats.");
+    $("guessInput").disabled=false;$("guessBtn").disabled=false;$("guessInput").focus();
+    state.ai=0;$("aiProgress").style.width="0%";$("aiText").textContent="0%";
+    state.aiTimer=setInterval(()=>{if(state.blocked||state.phase!==2)return;state.ai=Math.min(100,state.ai+10+rand(13));$("aiProgress").style.width=state.ai+"%";$("aiText").textContent=state.ai+"%";if(state.ai>=100)endGame("The AI adversary solved the fictional firewall first. Try a new operation.");},2200);
+  }
+  function submitGuess(value){
+    if(state.blocked||state.phase!==2)return;
+    const guess=value.trim();if(!/^\d{4}$/.test(guess)){$("guessFeedback").textContent="Enter exactly four digits.";return;}
+    if(guess===state.code){stopAI();state.won=true;$("playerProgress").style.width="100%";$("playerCount").textContent="1 / 1";$("guessFeedback").textContent="✓ PASSCODE MATCHED — PLAYER WINS";$("guessInput").disabled=true;$("guessBtn").disabled=true;setTimeout(()=>{if(!state.blocked){setPhase(3);$("phase3").scrollIntoView({behavior:"smooth",block:"start"});}},700);return;}
+    const answer=[...guess].filter((d,i)=>d===state.code[i]).length;
+    const shared=[...guess].filter(d=>state.code.includes(d)).length;
+    $("guessFeedback").textContent="No match. "+answer+" digit(s) correct and in the right position; "+shared+" digit(s) appear in the code.";
+  }
+  function renderDashboard(){
+    const messages=[
+      ["Mira / Ops","Build 7.4 passed the staging checklist. Keep this in the demo channel."],
+      ["Rakesh / IT","Reminder: rotate the sample credentials after the tabletop exercise."],
+      ["Dev / Infra","Backup drill completed. The report is in the training folder."],
+      ["Ananya / Security","Please attach the mock incident timeline before review."]
+    ];
+    $("chatLogs").innerHTML="";
+    messages.sort(()=>Math.random()-.5).forEach((m,i)=>{const d=document.createElement("div");d.className="logline";d.innerHTML="<b></b><div></div><small></small>";d.children[0].textContent=m[0];d.children[1].textContent="“"+m[1]+"”";d.children[2].textContent="SIM-LOG · "+String(9+i*7).padStart(2,"0")+":2"+i+" · FABRICATED";$("chatLogs").appendChild(d);});
+    const files=[["▤","network-map_demo.svg","TOPOLOGY / MOCK"],["▧","finance-sample.csv","FINANCE / SYNTHETIC"],["⌘","server-key-training.txt","KEY MATERIAL / FAKE"],["▣","incident-board.png","INCIDENT / MOCKUP"]];
+    $("filesGrid").innerHTML="";files.forEach(f=>{const d=document.createElement("div");d.className="file-card";d.innerHTML='<div class="file-art"></div><div><span></span><small></small></div>';d.children[0].textContent=f[0];d.children[1].children[0].textContent=f[1];d.children[1].children[1].textContent=f[2];$("filesGrid").appendChild(d);});
+  }
+  $("startBtn").addEventListener("click",startGame);
+  $("newOperation").addEventListener("click",startGame);
+  $("chatForm").addEventListener("submit",e=>{e.preventDefault();sendMessage($("chatInput").value);});
+  $("guessForm").addEventListener("submit",e=>{e.preventDefault();submitGuess($("guessInput").value);});
+  $("loginForm").addEventListener("submit",e=>{
+    e.preventDefault();if(state.blocked||state.phase!==3)return;
+    const user=$("loginUser").value.trim(),otp=$("loginOtp").value.trim();
+    if(user===state.targetUser&&otp===state.otp){
+      $("loginFeedback").textContent="Credentials accepted. Transitioning…";$("accessGranted").classList.add("visible");
+      setTimeout(()=>{if(!state.blocked){setPhase(4);renderDashboard();$("phase4").scrollIntoView({behavior:"smooth",block:"start"});}},850);
+    }else{$("loginFeedback").textContent="✕ ACCESS DENIED — handle or one-time code is incorrect."; $("loginFeedback").style.color="var(--red)";}
+  });
+  $("copyFlag").addEventListener("click",async()=>{const flag=$("finalFlag").textContent;try{await navigator.clipboard.writeText(flag);toast("Training flag copied.");}catch{const r=document.createRange();r.selectNodeContents($("finalFlag"));const s=window.getSelection();s.removeAllRanges();s.addRange(r);toast("Select the flag text and copy it.");}});
+  $("guessInput").addEventListener("input",e=>{e.target.value=e.target.value.replace(/\D/g,"").slice(0,4);});
+  $("loginOtp").addEventListener("input",e=>{e.target.value=e.target.value.replace(/\D/g,"").slice(0,4);});
+})();
+</script>
+<script>if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+</body>
+</html>
